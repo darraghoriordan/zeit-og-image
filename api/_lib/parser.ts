@@ -37,8 +37,8 @@ export function parseRequest(req: IncomingMessage) {
     heights: getArray(heights),
   };
   parsedRequest.images = getDefaultImages(
-    parsedRequest.images,
-    parsedRequest.theme
+    parsedRequest.images
+    // parsedRequest.theme
   );
   return parsedRequest;
 }
@@ -53,7 +53,7 @@ function getArray(stringOrArray: string[] | string | undefined): string[] {
   }
 }
 
-function getDefaultImages(images: string[], theme: Theme): string[] {
+function getDefaultImages(images: string[]): string[] {
   // const defaultImage = theme === 'light'
   //     ? 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg'
   //     : 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-white.svg';
